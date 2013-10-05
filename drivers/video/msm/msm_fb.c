@@ -3781,8 +3781,7 @@ static void msmfb_set_color_conv(struct mdp_csc *p)
 
 static int msmfb_notify_update(struct fb_info *info, void __user *argp)
 {
-	int ret;
-	unsigned int notify;
+	unsigned int ret = 0, notify = 0;
 	struct msm_fb_data_type *mfd = (struct msm_fb_data_type *)info->par;
 
 	ret = copy_from_user(&notify, argp, sizeof(unsigned int));
